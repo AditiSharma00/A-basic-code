@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+    <title>Personal Expense app</title>
+  </head>
+  <body>
+    <button id="btnCounter">+</button>
+    <script>
+      //take a number which starts from 0
+      let counter = 0;
+      //function to increment the number
+      function counterIncrement() {
+        counter = counter + 1;
+        console.log(counter);
+      }
+      //get the button element
+      const element = document.querySelector("#btnCounter");
+
+      //listen to click events
+      element.addEventListener("click", counterIncrement, false);
+    </script>
+  </body>
+</html>
