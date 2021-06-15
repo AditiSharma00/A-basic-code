@@ -16,14 +16,35 @@
     <title>Personal Expense app</title>
   </head>
   <body>
-    <button id="btnCounter">+</button>
-    <script>
-      //take a number which starts from 0
-      let counter = 0;
-      //function to increment the number
-      function counterIncrement() {
-        counter = counter + 1;
-        console.log(counter);
+    <h1 id="headingTotal"></h1>
+    
+    <input id="inputAmount" type = "text">
+</input>
+  <button id="btnCounter">+</button>
+  <script>
+//get the heading element
+const headingEl = document.querySelector("#headingTotal");
+      //init value of exepnse at 0
+      let totalExpense = 0;
+//set the heading element to totalexpense
+
+headingEl.textContent= totalExpense;
+      //on button click add input amount to total expense.
+      function addExpenseToTotal (){
+          //read value from input amount
+          const inputElement = document.querySelector("#inputAmount");
+          const textAmount = inputElement.value;
+         
+          //convert it to number
+          const expense =Number(textAmount);
+         
+
+          //addd that value to total expense
+          totalExpense=totalExpense+expense;
+
+          //set the heading element to total expense
+          headingEl.textContent= totalExpense;
+         console.log(totalExpense);
       }
       //get the button element
       const element = document.querySelector("#btnCounter");
